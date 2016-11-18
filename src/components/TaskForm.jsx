@@ -1,7 +1,17 @@
 import React from 'react';
 
+const handleSubmit = (event) => {
+  // stop event from leaving the form
+  event.stopPropagation();
+
+  const newTask = {
+    name: event.target.taskName.value,
+    desc: event.target.taskDesc.value,
+  };
+};
+
 const TaskForm = (props) => (
-  <form className="form-inline" onSubmit={(e)=>console.log(e)}>
+  <form className="form-inline" onSubmit={handleSubmit}>
 
     <div className="form-group">
       <label className="sr-only" htmlFor="taskName">Task Name</label>

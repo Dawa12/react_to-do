@@ -3,6 +3,7 @@ import Nav       from '../Nav/Nav';
 import TaskForm  from '../TaskForm';
 import Footer    from '../Footer/Footer';
 import TaskList  from '../TaskList';
+import Task      from '../../models/Task'
 
 import './App.css';
 import './GA_gear.png';
@@ -15,6 +16,8 @@ export default class App extends React.Component {
     this.state = {
       tasks: {},
     };
+
+    this.addTask = this.addTask.bind(this);
   }
 
   render() {
